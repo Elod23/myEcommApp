@@ -29,10 +29,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading text-white">We've got what you need!</h2>
+                <h2 class="section-heading text-white">We've got what you need! IMyFirst has been up and running since 2016 delivering the best gadgets to thousands of happy customers all across the globe.</h2>
                 <hr class="light my-4">
-                <p class="text-faded mb-4"> All strings attached!</p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started at us!</a>
+                <p class="text-faded mb-4"> We'be been working our asses off to fulfill each and every little desire of yours!</p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Do you want to learn more about us? Get started!</a>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Hot Products</h2>
-                <p>View</p>
+                <p>Top Most  Wanted</p>
                 <hr class="my-4">
             </div>
         </div>
@@ -67,10 +67,10 @@
                     <td>${product.productName}</td>
                     <td>${product.productCategory}</td>
                     <td>${product.productCondition}</td>
-                    <td>${product.productPrice} USD</td>
+                    <td>${product.productPrice} RON</td>
                     <td>
                         <a href="<c:url value="/viewProduct/${product.productId}" /> " >
-                        <span class="glyphicon glyphicon-info-sign"> </span>
+                        <span class="glyphicon glyphicon-info-sign"> view</span>
                         </a>
                     </td>
                 </tr>

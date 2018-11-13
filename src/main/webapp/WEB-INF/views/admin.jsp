@@ -18,6 +18,9 @@
                     <a href="<c:url value="/admin/productInventory" />" class="btn btn-lg btn-success">
                         Product Inventory
                     </a>
+                    <a href="<c:url value="/admin/searchProduct" />" class="btn btn-lg btn-success">
+                        Product Inventory
+                    </a>
                 </h3>
                 <p>View, check, and administrate the inventory!</p>
             </div>

@@ -6,11 +6,9 @@ import myEcommApp.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -52,9 +50,11 @@ public class AdminController {
         return "redirect:/admin/productInventory";
     }
 
-    @RequestMapping(value = "/admin/productInventory/searchProduct", method = RequestMethod.GET)
-    public String searchProductGet(@ModelAttribute ("product") Product product) {
-        return "redirect://viewProduct/{productId}";
+    @RequestMapping(value = "/admin/searchProduct", method = RequestMethod.GET)
+    public String searchProduct(@PathVariable int productId, Model model) throws IOException {
+        Product product = productDao.getProductById(productId);
+        model.addAttribute(product);
+        return "redirect:/admin/productInventory";
     }
 
     @RequestMapping(value = "/admin/productInventory/deleteProduct", method = RequestMethod.GET)

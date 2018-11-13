@@ -8,8 +8,6 @@
 --%>
 <%@ include file="/WEB-INF/views/template/home_header.jsp"%>
 
-
-
 <section class="bg-primary" id="about">
     <div class="container">
         <div class="row">
@@ -42,7 +40,8 @@
             <th>Category</th>
             <th>Condition</th>
             <th>Price</th>
-            <th></th>
+            <th>Detailed View</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <c:forEach items="${products}" var="product">
@@ -58,9 +57,13 @@
                     <span class="glyphicon glyphicon-circle-arrow-right"> info </span>
                     </a>
                 </td>
+
             </tr>
         </c:forEach>
     </table>
-    <a href="<c:url value="" />
+    <a href="<c:url value="/admin/productInventory/addProduct" />" class="btn btn-success"> Add Product </a>
+    <a href="<c:url value="/admin/productInventory/searchProduct" />" class="btn btn-success"> Search Product </a>
+    <a href="<c:url value="/admin/productInventory/deleteProduct" />" class="btn btn-success"> Delete Product </a>
 </section>
+
 <%@ include file="/WEB-INF/views/template/home_footer.jsp"%>

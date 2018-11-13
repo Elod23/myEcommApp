@@ -27,7 +27,7 @@ public class ProductDaoImp implements ProductDao {
 
     public Product getProductById(int id)  throws IOException {
         Session session = sessionFactory.getCurrentSession();
-        Product product =(Product) session.get(Product.class, id);
+        Product product = session.get(Product.class, id);
         if (product == null)
             throw new IOException("No such product found!");
         return product;

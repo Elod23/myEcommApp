@@ -8,11 +8,9 @@ import javax.persistence.Id;
 @Entity
 public class Product {
 
-private static int lastProductId = 1;
-
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-private int productId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer productId;
     private String productName;
     private String productDescription;
     private double productPrice;
@@ -22,10 +20,7 @@ private int productId;
     private int unitInStock;
     private String productManufacturer;
 
-    public Product() {
-        lastProductId++;
-        this.productId = lastProductId;
-    }
+    public Product() { }
 
     public int getProductId() {
         return productId;

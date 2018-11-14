@@ -19,13 +19,15 @@ public class ProductDaoImp implements ProductDao {
     @Autowired
     private SessionFactory sessionFactory;
 
+    @Override
     public void addProduct(Product product) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);
         session.flush();
     }
 
-    public Product getProductById(int id)  throws IOException {
+    @Override
+    public Product getProductById(Long id)  throws IOException {
         Session session = sessionFactory.getCurrentSession();
         Product product = session.get(Product.class, id);
         if (product == null)
@@ -33,6 +35,7 @@ public class ProductDaoImp implements ProductDao {
         return product;
     }
 
+    @Override
     public List<Product> getAllProducts() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product");
@@ -42,8 +45,10 @@ public class ProductDaoImp implements ProductDao {
         return products;
     }
 
-    public void deleteProduct(int id) throws IOException{
+    @Override
+    public void deleteProduct(Long id) throws IOException{
         Session session = sessionFactory.getCurrentSession();
+        System.out.println(id);
         session.delete(getProductById(id));
         session.flush();
     }

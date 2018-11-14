@@ -33,14 +33,14 @@
         </div>
     </div>
     <div class="container col-md-6 col-md-offset-3">
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/searchProduct" method="post" commandName="product">
+        <form:form action="${pageContext.request.contextPath}/viewProduct/${product.productId}" method="post" commandName="product">
             <div class="form-group">
                 <label for="name">Name</label>
                 <form:input path="productName" id="name" cssClass="form-control" />
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <a href="<c:url value="/viewProduct/{productId}" /> "  ><input type="submit" value="submit" class="btn btn-success" /> </a>
-                <a href="<c:url value="/admin/productInventory" />"  class="btn btn-primary"> Cancel </a>
+                <a href="<c:url value="/admin" />"  class="btn btn-primary"> Cancel </a>
             </div>
         </form:form>
     </div>

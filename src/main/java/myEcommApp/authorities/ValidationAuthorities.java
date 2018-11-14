@@ -1,4 +1,4 @@
-package myEcommApp.authorities;
+/*package myEcommApp.authorities;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -45,3 +45,4 @@ public class ValidationAuthorities implements UserDetails {
         return (accountAvailability && !accountLock);
     }
 }
+*/

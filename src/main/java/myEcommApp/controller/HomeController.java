@@ -1,7 +1,7 @@
 package myEcommApp.controller;
 
-import myEcommApp.dao.ProductDao;
 import myEcommApp.model.Product;
+import myEcommApp.services.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,19 +15,19 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    private ProductDao productDao;
+    private ProductServices productServices;
 
     @RequestMapping("/")
     public String home(Model model) {
-        List<Product> productList = productDao.getAllProducts();
+        List<Product> productList = productServices.getAllProducts();
         model.addAttribute("products", productList);
 
         return "home";
     }
 
     @RequestMapping("/viewProduct/{productId}")
-    public String viewProduct(@PathVariable int productId, Model model) throws IOException {
-        Product product = productDao.getProductById(productId);
+    public String viewProduct(@PathVariable Long productId, Model model) throws IOException {
+        Product product = productServices.getProductById(productId);
         model.addAttribute(product);
 
         return "viewProduct";

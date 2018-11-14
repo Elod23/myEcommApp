@@ -1,21 +1,34 @@
-/*package myEcommApp.controller;
+package myEcommApp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.portlet.ModelAndView;
 
 @Controller
 public class LoginController {
 
-    @RequestMapping("/login")
-    public String showLoginPage() {
-        return "login";
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView login(@RequestParam(value = "error", required = false) String error) {
+
+        ModelAndView modelAndView = new ModelAndView();
+        if (error != null) {
+            modelAndView.addObject("error", "The username is incorrect");
+        }
+
+        modelAndView.setViewName("login/login");
+        return modelAndView;
     }
 
-    /*@RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String verifyLogin(@RequestParam String userName, String password) {
+    /*@RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView home() {
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.setViewName("//");
+            return modelAndView;
+    }*/
 
-    }
+
 }
-*/
+
+

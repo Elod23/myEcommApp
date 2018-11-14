@@ -61,7 +61,7 @@
             </tr>
         </thead>
             <c:forEach items="${products}" var="product">
-
+                <c:if test="${product.productPrice > 3000 && product.unitInStock > 0}" >
                 <tr>
                     <td><img src="#" alt="image"/> </td>
                     <td>${product.productName}</td>
@@ -74,6 +74,7 @@
                         </a>
                     </td>
                 </tr>
+                </c:if>
             </c:forEach>
     </table>
 </section>

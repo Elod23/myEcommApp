@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
+@Table(name="AuthorizedUser ")
 public class AuthorizedUser {
 
     @Id

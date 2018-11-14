@@ -9,9 +9,9 @@ public interface ProductDao {
 
     void addProduct(Product product);
 
-    Product getProductById(int id) throws IOException;
+    Product getProductById(Long id) throws IOException;
 
     List<Product> getAllProducts();
 
-    void deleteProduct(int id) throws IOException;
+    void deleteProduct(Long id) throws IOException;
 }

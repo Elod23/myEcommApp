@@ -13,8 +13,9 @@ import java.io.IOException;
 import java.util.List;
 
 @Repository
-@Transactional
 public class AuthorizedUserDaoImp implements AuthorizedUserDAO {
+
+
 
     @Autowired
     private SessionFactory sessionFactory;

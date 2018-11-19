@@ -90,4 +90,19 @@ public class AdminController {
         return "redirect://admin/productInventory";
     }
 
+
+    @RequestMapping("/admin/productInventory/editProduct/{productId}")
+    public String updateProduct(Model model,@PathVariable Long productId) throws IOException {
+        Product product = productServices.getProductById(productId);
+
+        model.addAttribute("product", product);
+        return "editProduct";
+    }
+
+    @RequestMapping(value = "/admin/productInventory/editProduct/{productId}/edit/{productId}", method = RequestMethod.POST)
+    public String updateProductPost(@ModelAttribute("product") Product product, @PathVariable Long productId) throws Exception {
+
+        productServices.updateProduct(productId, product);
+        return "redirect:/admin/productInventory";
+    }
 }

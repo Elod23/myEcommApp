@@ -43,6 +43,7 @@
             <th>Condition</th>
             <th>Price</th>
             <th>Detailed View</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -56,9 +57,17 @@
                 <td>${product.productPrice} LEI</td>
                 <td>
                     <form:form action="${pageContext.request.contextPath}/viewProduct/${product.productId}" method="post"
-                               commandName="product">
+                               commandName="product" target="_blank">
                         <div class="form-group">
                             <input type="submit" value="Details" class="btn btn-lg btn-success">
+                        </div>
+                    </form:form>
+                </td>
+                <td>
+                    <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct/${product.productId}" method="post"
+                               commandName="product" target="_blank">
+                        <div class="form-group">
+                            <input type="submit" value="Edit" class="btn btn-lg btn-success">
                         </div>
                     </form:form>
                 </td>

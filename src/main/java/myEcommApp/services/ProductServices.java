@@ -30,4 +30,12 @@ public class ProductServices {
     public void addProduct(Product product) {
         productDao.addProduct(product);
     }
- }
+
+    public void updateProduct(Long id, Product updatedProduct) throws IOException {
+        if (productDao.getProductById(id) != null) {
+            productDao.deleteProduct(id);
+            productDao.addProduct(updatedProduct);
+        }else
+            throw new IOException("No such product to be updated!");
+    }
+}
